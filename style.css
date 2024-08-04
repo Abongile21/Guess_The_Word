@@ -1,0 +1,68 @@
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes correctAnim {
+    0%, 100% {
+        background-color: #4caf50;
+        transform: scale(1.1);
+    }
+    50% {
+        background-color: #81c784;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes wrongAnim {
+    0%, 100% {
+        background-color: #f44336;
+        transform: scale(0.9);
+    }
+    50% {
+        background-color: #ef9a9a;
+        transform: scale(0.7);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.animate-bounce { animation: bounce 2s infinite; }
+.animate-pulse { animation: pulse 2s infinite; }
+.correct { animation: correctAnim 1s ease-in-out; }
+.wrong { animation: wrongAnim 1s ease-in-out; }
+
+.shadow-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s, fadeOut 0.5s 4.5s;
+}
+
+.toast-success { background-color: #4caf50; }
+.toast-error { background-color: #f44336; }
+.toast-info { background-color: #2196f3; }

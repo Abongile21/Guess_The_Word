@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Word - Colorful Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-yellow-100 to-pink-100 text-gray-800">
+    <div id="landing-page" class="h-screen flex items-center justify-center">
+        <div class="text-center p-8 bg-white rounded-2xl shadow-xl transform hover:scale-105 transition-transform">
+            <h1 class="text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Guess the Word</h1>
+            <button id="start-btn" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">Start Game</button>
+        </div>
+    </div>
+
+    <div id="game-page" class="hidden h-screen flex flex-col items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-6 shadow-xl max-w-lg w-full border-4 border-purple-300 transform hover:scale-105 transition-transform">
+            <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Guess the Word</h2>
+            <p id="scrambled-word" class="mb-4 text-6xl font-bold text-orange-500"></p>
+            <div class="relative mb-6">
+                <input id="guess-input" type="text" class="border-2 border-purple-300 rounded-lg p-3 text-gray-700 w-full max-w-xs shadow-md focus:outline-none focus:ring-2 focus:ring-purple-400" placeholder="Enter your guess">
+                <button id="hint-btn" class="absolute right-0 top-0 p-3 bg-yellow-400 text-gray-800 rounded-r-lg hover:bg-yellow-300">Hint</button>
+            </div>
+            <button id="guess-btn" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition mb-6">Guess</button>
+            <p id="message" class="mt-4 text-lg font-medium text-pink-600"></p>
+            <p id="score" class="mt-4 text-lg font-medium text-indigo-600">Score: 0</p>
+            <p id="attempts" class="mt-4 text-lg font-medium text-green-600">Remaining Attempts: 3</p>
+            <div id="bonus-level" class="hidden mt-8 text-center">
+                <h3 class="text-4xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500">Bonus Level</h3>
+                <img id="bonus-image" src="" alt="Bonus Image" class="rounded-lg mb-6 max-w-xs mx-auto border-4 border-yellow-300 shadow-xl transform hover:scale-105 transition-transform">
+                <input id="bonus-input" type="text" class="border-2 border-yellow-300 rounded-lg p-3 mb-6 text-gray-700 w-full max-w-xs shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Enter your guess">
+                <button id="bonus-btn" class="bg-gradient-to-r from-red-400 to-yellow-500 hover:from-red-500 hover:to-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">Submit</button>
+            </div>
+            <button id="profile-btn" class="bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition mt-6">View Profile</button>
+        </div>
+    </div>
+
+    <div id="profile-page" class="hidden h-screen flex items-center justify-center">
+        <div class="text-center p-6 bg-white rounded-2xl shadow-xl max-w-md w-full border-4 border-blue-300 transform hover:scale-105 transition-transform">
+            <h2 class="text-4xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">User Profile</h2>
+            <p class="mb-4 text-lg font-medium text-gray-700">Username: <span id="username" class="text-indigo-600"></span></p>
+            <p class="mb-4 text-lg font-medium text-gray-700">High Score: <span id="high-score" class="text-green-600"></span></p>
+            <button id="back-to-game-btn" class="bg-gradient-to-r from-blue-400 to-teal-500 hover:from-blue-500 hover:to-teal-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">Back to Game</button>
+        </div>
+    </div>
+
+    <div id="toast-container" class="fixed top-4 right-4 flex flex-col space-y-4"></div>
+
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+    <audio id="bonus-sound" src="sounds/bonus.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
