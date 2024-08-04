@@ -12,9 +12,9 @@ const words = [
 ];
 
 const bonusImages = [
-    { image: "images/server.jpg", word: "server" },
-    { image: "images/database.jpg", word: "database" },
-    { image: "images/javascript.jpg", word: "javascript" }
+    { image: "images/server.jfif", word: "server" },
+    { image: "images/database.jfif", word: "database" },
+    { image: "images/javascript.jfif", word: "javascript" }
 ];
 
 let currentWordIndex = 0;
