@@ -89,8 +89,10 @@ function loadNewWord() {
 }
 
 function checkGuess() {
-    const userGuess = guessInput.value.toLowerCase();
+    const userGuess = guessInput.value.toLowerCase().trim();
     const currentWord = words[currentWordIndex].word;
+
+    
 
     if (userGuess === currentWord) {
         showToast('Correct!', 'success');
@@ -103,7 +105,12 @@ function checkGuess() {
             bonusSound.play();
             showBonusLevel();
         }
-    } else {
+    } else if (userGuess ==='') {
+        showToast('field cannot be empty')
+        wrongSound.play();
+        guessInput.classList.add('wrong');
+    }
+    else {
         showToast('Wrong! Try again.', 'error');
         wrongSound.play();
         guessInput.classList.add('wrong');
@@ -171,7 +178,7 @@ function showToast(message, type) {
     toastContainer.appendChild(toast);
     setTimeout(() => {
         toast.remove();
-    }, 5000);
+    }, 2000);
 }
 
 function shuffle(array) {
