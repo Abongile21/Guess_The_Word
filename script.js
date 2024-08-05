@@ -48,6 +48,7 @@ const correctSound = document.getElementById('correct-sound');
 const wrongSound = document.getElementById('wrong-sound');
 const bonusSound = document.getElementById('bonus-sound');
 const toastContainer = document.getElementById('toast-container');
+const game_over =document.getElementById('game-over');
 
 startBtn.addEventListener('click', () => {
     landingPage.classList.add('hidden');
@@ -120,6 +121,7 @@ function checkGuess() {
 
         if (incorrectGuesses >= maxIncorrectGuesses) {
             showToast('Game Over! Restarting...', 'error');
+            game_over.play()
             setTimeout(() => {
                 resetGame();
             }, 2000);
