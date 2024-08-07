@@ -90,7 +90,8 @@ function loadNewWord() {
 }
 
 function checkGuess() {
-    const userGuess = guessInput.value.toLowerCase().trim();
+    const userGuess = guessInput.value.toLowerCase
+    ().trim();
     const currentWord = words[currentWordIndex].word;
 
     
